@@ -1,0 +1,396 @@
+.left {
+  width: 25vw;
+}
+
+.right {
+  width: 75vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.3rem;
+}
+
+.home ul {
+  padding: 0.5rem;
+}
+
+.home ul li {
+  display: flex;
+  height: 1.5rem;
+  padding: 0.5rem;
+  gap: 0.8rem;
+}
+
+.home ul li img {
+  height: 1.5rem;
+  filter: invert(1);
+}
+
+body {
+  background-color: black;
+  padding: 0.25rem;
+  overflow-x: hidden;
+}
+
+.library {
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+
+.lib_head img {
+  filter: invert(0.8);
+  height: 1.5rem;
+}
+
+.lib_head {
+  gap: 0.8rem;
+  padding: 0.8rem;
+}
+
+.home {
+  margin-bottom: 0.5rem;
+  justify-content: space-between;
+}
+
+.library_header {
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.song_list {
+  margin: 0.8rem;
+  height: 27.09rem;
+}
+
+.song_list ul {
+  height: 23rem;
+  overflow-y: scroll;
+}
+
+.song_list ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.song_list ul li img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 10rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.player {
+  position: fixed;
+  bottom: 0;
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.controls {
+  gap: 2rem;
+  margin: 0.5rem 0;
+}
+
+.player img {
+  filter: invert(1);
+  height: 2rem;
+}
+
+#Play {
+  display: block;
+}
+
+#Pause {
+  display: none;
+}
+
+.MainHeader {
+  height: 4rem;
+  border-radius: 0.6rem 0.6rem 0 0;
+  text-decoration: underline;
+  font-size: larger;
+  justify-content: center;
+  align-items: center;
+}
+
+.YourSongs {
+  padding: 1rem;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  gap: 2rem;
+  height: 30rem;
+  justify-content: flex-start;
+}
+
+.Album {
+  height: 15rem;
+  width: 9rem;
+  flex-direction: column;
+}
+
+.Album img {
+  width: 9rem;
+  height: 12rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.name {
+  height: 2rem;
+}
+
+.title {
+  height: 5rem;
+  padding: 0 0 0 1rem;
+  text-decoration: underline;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+#Play:hover {
+  cursor: pointer;
+}
+
+#Pause:hover {
+  cursor: pointer;
+}
+
+#Previous:hover {
+  cursor: pointer;
+}
+
+#Next:hover {
+  cursor: pointer;
+}
+
+.songInfo {
+  position: relative;
+  left: 3rem;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.seekbar {
+  height: 0.2rem;
+  width: 30rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.seekbarBall {
+  height: 0.7rem;
+  width: 0.7rem;
+  background-color: white;
+  position: relative;
+  bottom: 0.25rem;
+  left: 0;
+  border-radius: 0.7rem;
+}
+
+.volume_control {
+  gap: 0.5rem;
+}
+
+.volume_control img {
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.volumeBar {
+  height: 0.2rem;
+  width: 10rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.volumeBarBall {
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  bottom: 0.15rem;
+  left: 100%;
+}
+
+.Album {
+  cursor: pointer;
+}
+
+.Naming {
+  font-size: large;
+  width: 20rem;
+  text-align: center;
+}
+
+#Hamburger {
+  filter: invert(1);
+  display: none;
+}
+
+#cross img {
+  filter: invert(1);
+  height: 30px;
+  width: 30px;
+  margin: 1rem;
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  .seekbar {
+    width: 15rem;
+  }
+
+  .volumeBar {
+    width: 5rem;
+  }
+  .Naming {
+    font-size: medium;
+  }
+  .song_time {
+    font-size: small;
+  }
+  .songInfo {
+    gap: 2rem;
+    left: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .left {
+    position: absolute;
+    left: -75%;
+    transition: all 0.3s;
+    width: 75vw;
+    background-color: black;
+    z-index: 1;
+  }
+
+  .right {
+    width: 100vw;
+  }
+
+  #Hamburger {
+    display: block;
+  }
+
+  .MainHeader {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .songInfo {
+    gap: 0.3rem;
+  }
+
+  #cross img {
+    display: block;
+  }
+
+  .volume_control img {
+    height: 1rem;
+  }
+
+  .player img {
+    height: 1.2rem;
+  }
+
+  .seekbar {
+    width: 12rem;
+  }
+
+  .volumeBar {
+    width: 4rem;
+  }
+
+  .song_time {
+    margin-right: 1rem;
+  }
+
+  .songInfo {
+    left: -0.5rem;
+  }
+
+  .Album {
+    width: 10rem;
+  }
+
+  .Album img {
+    width: 10rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .left {
+    width: 96vw;
+    left: -96%;
+  }
+
+  .volume_control img {
+    display: none;
+  }
+
+  .volumeBar {
+    display: none;
+  }
+
+  .volumeBarBall {
+    display: none;
+  }
+
+  #Hamburger {
+    width: 15px;
+    height: 15px;
+  }
+
+  #cross img {
+    height: 15px;
+    width: 15px;
+  }
+
+  .MainHeader {
+    font-size: large;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .Album {
+    width: 15rem;
+    height: 18rem;
+  }
+
+  .Album img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .YourSongs {
+    height: 28.7rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+  }
+}
