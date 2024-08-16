@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify-clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="left">
+        <div class="home border-check roboto-bold bg-one flex">
+          <ul>
+            <li>
+              <img src="/Assets/logo.svg" alt="Spotify-logo" />
+            </li>
+            <li class="align-center color-one">
+              <img src="/Assets/Home.svg" alt="Home" />Home
+            </li>
+            <li class="align-center color-two">
+              <img src="/Assets/Search.svg" alt="Search" />Search
+            </li>
+          </ul>
+          <div id="cross">
+            <img src="/Assets/cross.svg" alt="" />
+          </div>
+        </div>
+        <div class="library bg-one">
+          <div class="library_header flex align-center">
+            <div class="lib_head roboto-bold color-two flex align-center">
+              <img src="/Assets/library.svg" alt="Your Library" />
+              Your Library
+            </div>
+          </div>
+          <div class="song_list border-check bg-one color-one">
+            <ul class="border-check"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="right border-check">
+        <div class="MainHeader flex bg-one color-one roboto-bold">
+          <img id="Hamburger" src="/Assets/Hamburger.svg" alt="" />
+          Aryan Singh Thakur's Songs
+        </div>
+        <div class="mainArea bg-two">
+          <div class="title align-center flex color-one">
+            <h1>Playlists</h1>
+          </div>
+          <div class="YourSongs flex"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="player bg-two">
+        <div class="controls flex justify-center align-center">
+          <img id="Previous" src="/Assets/Previous Button.svg" alt="" />
+          <img id="Play" src="/Assets/Play Button.svg" alt="" />
+          <img src="/Assets/pause-stroke-rounded.svg" alt="" id="Pause" />
+          <img src="/Assets/Next Button.svg" alt="" id="Next" />
+        </div>
+        <div class="Naming color-one"></div>
+
+        <div class="songInfo flex justify-center">
+          <div class="song_time color-one"></div>
+          <div class="seekbar" id="Bar1">
+            <div class="seekbarBall" id="Ball1"></div>
+          </div>
+          <div class="volume_control flex align-center">
+            <img src="/Assets/High_Stroke.svg" alt="" />
+            <div class="volumeBar">
+              <div class="volumeBarBall"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
