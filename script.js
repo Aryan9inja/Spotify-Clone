@@ -9,7 +9,7 @@ let currFolder;
 // Function to display albums on the webpage in the playlist section
 async function display_albums() {
   // Getting song folder names from the internal folder Songs
-  let data = await fetch("/Songs/");
+  let data = await fetch("Songs/");
   let response = await data.text();
 
   // Creating a temporary div element to store the response from above
@@ -28,21 +28,21 @@ async function display_albums() {
     const element = array[index];
 
     // Checks if the link will be from the folder required or not
-    if (element.href.includes("/Songs/")) {
+    if (element.href.includes("Songs/")) {
       // Retrieve the name of folder from the link
       // .split splits the link into two parts before and after the "/"
       // .slice(-2)[0] create an array from the end with two elements of which first is selected that is the folder name
       let folder = element.href.split("/").slice(-2)[0];
 
       // Get mata-deta from the folder
-      let a = await fetch(`/Songs/${folder}/data.json`);
+      let a = await fetch(`Songs/${folder}/data.json`);
       let response = await a.json();
 
       // Append the Album onto the Album container
       let Album = document.createElement("div");
       Album.classList.add("Album", "bg-two");
       Album.innerHTML = `<img
-                src="/Assets/wp5709607-hacker-desktop-4k-wallpapers.jpg"
+                src="Assets/wp5709607-hacker-desktop-4k-wallpapers.jpg"
                 alt=""
               />
               <div class="name color-one flex align-center justify-center bg-one">
@@ -68,7 +68,7 @@ async function display_albums() {
 async function getSongs(folder) {
   currFolder = folder;
   // Getting songs name from a specific folder
-  let data = await fetch(`/${folder}/`);
+  let data = await fetch(`${folder}/`);
   let response = await data.text();
 
   // Creating a temporary div element to store the response from above
@@ -101,7 +101,7 @@ async function getSongs(folder) {
   // Appending every song to the soong list
   songs.forEach((song) => {
     const li = document.createElement("li");
-    li.innerHTML = `<img src="/Assets/wp5709607-hacker-desktop-4k-wallpapers.jpg" alt="">${song.replace(
+    li.innerHTML = `<img src="Assets/wp5709607-hacker-desktop-4k-wallpapers.jpg" alt="">${song.replace(
       ".mp3",
       ""
     )}`;
@@ -109,7 +109,7 @@ async function getSongs(folder) {
 
     // Adding a click event listener to every song name element
     li.addEventListener("click", function () {
-      currSong.src = `/${folder}/${song}`;
+      currSong.src = `${folder}/${song}`;
       currSong.play();
 
       play.style.display = "none";
@@ -124,7 +124,7 @@ async function getSongs(folder) {
 }
 
 function playSongs(track, pause = false) {
-  currSong.src = `/${currFolder}/${track}`;
+  currSong.src = `${currFolder}/${track}`;
   if (!pause) {
     currSong.play();
   }
