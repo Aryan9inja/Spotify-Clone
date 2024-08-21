@@ -9,7 +9,7 @@ let currFolder;
 // Function to display albums on the webpage in the playlist section
 async function display_albums() {
   // Getting song folder names from the internal folder Songs
-  let data = await fetch("Songs/");
+  let data = await fetch("https://github.com/Aryan9inja/Spotify-Clone/tree/main/Songs/");
   let response = await data.text();
 
   // Creating a temporary div element to store the response from above
@@ -35,7 +35,7 @@ async function display_albums() {
       let folder = element.href.split("/").slice(-2)[0];
 
       // Get mata-deta from the folder
-      let a = await fetch(`Songs/${folder}/data.json`);
+      let a = await fetch(`https://github.com/Aryan9inja/Spotify-Clone/tree/main/Songs/${folder}/data.json`);
       let response = await a.json();
 
       // Append the Album onto the Album container
@@ -50,7 +50,7 @@ async function display_albums() {
               </div>`;
 
       Album.addEventListener("click", async function () {
-        await getSongs(`Songs/${folder}`);
+        await getSongs(`https://github.com/Aryan9inja/Spotify-Clone/tree/main/Songs/${folder}`);
         playSongs(songs[0]);
         play.style.display = "none";
         pause.style.display = "block";
@@ -109,7 +109,7 @@ async function getSongs(folder) {
 
     // Adding a click event listener to every song name element
     li.addEventListener("click", function () {
-      currSong.src = `${folder}/${song}`;
+      currSong.src = `/${folder}/${song}`;
       currSong.play();
 
       play.style.display = "none";
@@ -124,7 +124,7 @@ async function getSongs(folder) {
 }
 
 function playSongs(track, pause = false) {
-  currSong.src = `${currFolder}/${track}`;
+  currSong.src = `/${currFolder}/${track}`;
   if (!pause) {
     currSong.play();
   }
@@ -145,7 +145,7 @@ function SecondsToMinute_Seconds(seconds) {
 }
 
 async function main() {
-  await getSongs("Songs/S");
+  await getSongs("https://github.com/Aryan9inja/Spotify-Clone/tree/main/Songs/S");
   playSongs(songs[0], true);
 
   await display_albums();
